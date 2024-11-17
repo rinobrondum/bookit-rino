@@ -1,7 +1,14 @@
+import rooms from "@/data/rooms.json";
+
 export default function Home() {
   return (
     <>
-      <h1>Bookit App</h1>
+      {rooms.length > 0 ? (
+        rooms.map((room) => <h3 key={room.id}>{room.name}</h3>)
+      ) : (
+        <p>No rooms available at the moment</p>
+
+      )}
       
     </>
   );
