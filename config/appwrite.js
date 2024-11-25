@@ -1,6 +1,6 @@
 import { Client, Databases, Account, Storage } from "node-appwrite";
 
-//Admin Client
+// Admin Client
 const createAdminClient = async () => {
   const client = new Client()
     .setEndpoint(process.env.NEXT_PUBLIC_APPWRITE_ENDPOINT)
