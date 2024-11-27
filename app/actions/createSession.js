@@ -12,14 +12,11 @@ async function createSession(previousState, formData) {
     };
   }
   // Get account instance
-  const { account } = createAdminClient();
+  const { account } = await createAdminClient();
 
   try {
     // Generate Session
-    const { session } = await account.createEmailPasswordSession(
-      email,
-      password
-    );
+    const session = await account.createEmailPasswordSession(email, password);
 
     //Create cookie
     cookies().set("appwrite-session", session.secret, {
